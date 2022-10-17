@@ -1,0 +1,91 @@
+<p-toast></p-toast>
+<p-table #dt [columns]="cols" [value]="gridView" dataKey="id" [rows]="10" [showCurrentPageReport]="true"
+         [rowsPerPageOptions]="[10,25,50]" styleClass="p-datatable-customers p-datatable-gridlines"
+         [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+         [globalFilterFields]="['make','model','location']">
+  <ng-template pTemplate="caption">
+    <div class="p-d-flex">
+      <span class="p-input-icon-left p-ml-auto">
+        <i class="pi pi-search"></i>
+        <input pInputText type="text" (input)="dt.filterGlobal($any($event.target).value, 'contains')" placeholder="Search keyword" />
+      </span>
+      <span style="margin-left:730px;"><p-button (click)="addMaximizableDialog()" icon="pi pi-plus" label="Add New"></p-button></span>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="header">
+    <tr>
+      <!--<th rowspan="3" style="width:25%;text-align:center;">Name</th>-->
+      <th style="width:20%;text-align:center;" pSortableColumn="make">Make <p-sortIcon field="make"></p-sortIcon></th>
+      <th style="width:20%;text-align:center;" pSortableColumn="model">Model <p-sortIcon field="model"></p-sortIcon></th>
+      <th style="width:20%;text-align:center;" pSortableColumn="registration">Registration <p-sortIcon field="registration"></p-sortIcon></th>
+      <th style="width:20%;text-align:center;" pSortableColumn="location">Location <p-sortIcon field="location"></p-sortIcon></th>
+      <th style="width:20%;text-align:center;" pSortableColumn="createdDate">Date <p-sortIcon field="createdDate"></p-sortIcon></th>
+      <th style="width:25%;text-align:center;">Action</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-item>
+    <tr style="text-align:center;">
+      <td style="width:20%;">{{item.make}}</td>
+      <td style="width:20%;">{{item.model}}</td>
+      <td style="width:20%;">{{item.registration}}</td>
+      <td style="width:20%;">{{item.location}}</td>
+      <td style="width:20%;">{{item.createdDate |  date:'MM/dd/yyyy hh:mm:ss'}}</td>
+      <td>
+        <p-button (click)="showMaximizableDialog(item)" icon="pi pi-external-link" label="Show"></p-button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
+
+<p-dialog header="Flight Details" [(visible)]="displayMaximizable" [modal]="true" [style]="{width: '50vw'}" [maximizable]="true" [baseZIndex]="10000"
+          [draggable]="false" [resizable]="false">
+  <table>
+    <tr>
+      <td>Make: </td>
+      <td>{{flightdetails.Make}}</td>
+    </tr>
+    <tr>
+      <td>Model: </td>
+      <td>{{flightdetails.Model}}</td>
+    </tr>
+    <tr>
+      <td>Registration: </td>
+      <td>{{flightdetails.Registration}}</td>
+    </tr>
+    <tr>
+      <td>Location: </td>
+      <td>{{flightdetails.Location}}</td>
+    </tr>
+    <tr>
+      <td>Date: </td>
+      <td>{{flightdetails.CreatedDate}}</td>
+    </tr>
+  </table>
+</p-dialog>
+
+
+<p-dialog header="Flight Details" [(visible)]="addMaximizable" [modal]="true" [style]="{width: '50vw'}" [maximizable]="true" [baseZIndex]="10000"
+          [draggable]="false" [resizable]="false">
+  <table>
+    <tr>
+      <td>Make: </td>
+      <td><input type="text" style="width:300px;" [(ngModel)]="newflightdetails.Make" /></td>
+    </tr>
+    <tr>
+      <td>Model: </td>
+      <td><input type="text" style="width:300px;" [(ngModel)]="newflightdetails.Model" /></td>
+    </tr>
+    <tr>
+      <td>Registration: </td>
+      <td><input type="text" style="width:300px;" [(ngModel)]="newflightdetails.Registration" /></td>
+    </tr>
+    <tr>
+      <td>Location: </td>
+      <td><input type="text" style="width:300px;" [(ngModel)]="newflightdetails.Location" /></td>
+    </tr>    
+  </table>
+  <ng-template pTemplate="footer">
+    <p-button icon="pi pi-check" (click)="saveFlightDetails();" label="Save" class="p-button-text"></p-button>
+    <p-button icon="pi pi-times" (click)="addMaximizable=false" label="Cancel"></p-button>
+  </ng-template>
+</p-dialog>

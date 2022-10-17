@@ -1,0 +1,12 @@
+D:\Projects\Rusada\Rusada.DL\bin\Debug\net6.0\Rusada.DL.deps.json
+D:\Projects\Rusada\Rusada.DL\bin\Debug\net6.0\Rusada.DL.dll
+D:\Projects\Rusada\Rusada.DL\bin\Debug\net6.0\Rusada.DL.pdb
+D:\Projects\Rusada\Rusada.DL\obj\Debug\net6.0\Rusada.DL.csproj.AssemblyReference.cache
+D:\Projects\Rusada\Rusada.DL\obj\Debug\net6.0\Rusada.DL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Rusada\Rusada.DL\obj\Debug\net6.0\Rusada.DL.AssemblyInfoInputs.cache
+D:\Projects\Rusada\Rusada.DL\obj\Debug\net6.0\Rusada.DL.AssemblyInfo.cs
+D:\Projects\Rusada\Rusada.DL\obj\Debug\net6.0\Rusada.DL.csproj.CoreCompileInputs.cache
+D:\Projects\Rusada\Rusada.DL\obj\Debug\net6.0\Rusada.DL.dll
+D:\Projects\Rusada\Rusada.DL\obj\Debug\net6.0\refint\Rusada.DL.dll
+D:\Projects\Rusada\Rusada.DL\obj\Debug\net6.0\Rusada.DL.pdb
+D:\Projects\Rusada\Rusada.DL\obj\Debug\net6.0\ref\Rusada.DL.dll
